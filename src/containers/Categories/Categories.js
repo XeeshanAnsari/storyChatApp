@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FooterContent } from './../../components';
 import { View, ImageBackground } from 'react-native';
 import { Container, Content, Text, Card, CardItem } from './../../materialComponents';
 import styles from './CategoriesStyle';
@@ -40,6 +41,7 @@ class Categories extends Component {
 
     render() {
         const { HeaderText, CategoryCard, CategoryText } = styles;
+        const { navigation } = this.props;
         return (
             <Container>
                 <Content padding={20}>
@@ -64,6 +66,7 @@ class Categories extends Component {
                         })
                     }
                 </Content>
+                <FooterContent navigation={navigation} />
             </Container>
         )
     }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FooterContent } from './../../components';
 import { View, ImageBackground, TouchableOpacity } from 'react-native';
 import { Container, Content, Text, Card, CardItem, Thumbnail } from './../../materialComponents';
 import styles from './CategoryDetailsStyle';
@@ -56,6 +57,7 @@ class CategoryDetails extends Component {
             CardFooterButtonIcon,
             CardFooterButtonText,
             } = styles;
+            const {navigation} = this.props;
         return (
             <Container>
                 <Content padding={20}>
@@ -85,9 +87,9 @@ class CategoryDetails extends Component {
                                                 <Text style={SaveMoneyText}>Save more monoey</Text>
                                             </View>
                                         </View>
-                                        <View style={CardReadButton}>
+                                        <TouchableOpacity style={CardReadButton}>
                                             <Text style={CardReadButtonText}>Read</Text>
-                                        </View>
+                                        </TouchableOpacity>
                                     </View>
                                     <View style={CardFooterButtonContainer}>
                                         <TouchableOpacity style={[CardFooterButton, CardFooterLikeButton]}>
@@ -104,6 +106,7 @@ class CategoryDetails extends Component {
                         })
                     }
                 </Content>
+                <FooterContent navigation={navigation} />
             </Container>
         )
     }
